@@ -43,8 +43,6 @@ export default function AddStudent({addStudent}) {
             }         
         </TextField>
 
-            <p>out student {name} {surname} {group} </p>
-
             <Button variant="contained" onClick={() => addStudent(name, surname, group)}>Add student</Button>
 
         </Grid>
