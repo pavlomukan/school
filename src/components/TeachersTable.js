@@ -17,7 +17,7 @@ const rows = [
 //   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function StudentsTable({students}) {
+export default function TeachersTable({teachers}) {
 
 
   return (
@@ -27,18 +27,18 @@ export default function StudentsTable({students}) {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>Surname</TableCell>
-            <TableCell>Group</TableCell>
+            <TableCell>Subject</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {students.map((i) => (
+          {teachers.map((i) => (
             <TableRow
               key={i.name + i.surname}
-              sx={{ '&:last-child td, &:last-child th': { border: 1 } }}
+              sx={{ '&:last-child td, &:last-child th': { border: 5 } }}
             >
               <TableCell>{i.name}</TableCell>
               <TableCell>{i.surname}</TableCell>
-              <TableCell>{i.group}</TableCell>
+              <TableCell>{i.subject}</TableCell>
             </TableRow>
           ))}
         </TableBody>

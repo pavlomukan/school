@@ -1,20 +1,19 @@
 import React from 'react';
 import {TextField, Box, Grid, MenuItem, Button } from '@mui/material';
 
-export default function AddStudent({addStudent}) {
+export default function AddTeacher({addTeacher}) {
 
-    const studentGroups = ['11', '12', '13'];
+    const teacherGroups = ['English', 'Math', 'Sciense', 'Geography', 'Art', 'PE', 'Biology'];
 
     const [name, setName] = React.useState('');
     const [surname, setSurname] = React.useState('');
-    const [group, setGroup] = React.useState('');
+    const [subject, setSubject] = React.useState('');
 
     return (
     <Box
         component="form"
         noValidate
         autoComplete="off"
-      
       >
         <Grid
             container
@@ -23,8 +22,9 @@ export default function AddStudent({addStudent}) {
             alignItems="flex-start"
             >
         <TextField
-            id="outlined-basic" 
-            label="Name" 
+            id="outlined-basic"
+        
+            label=" Teacher Name" 
             value={name} 
             onChange={(e) => setName(e.target.value)} 
             variant="outlined" />
@@ -33,18 +33,18 @@ export default function AddStudent({addStudent}) {
           id="outlined-select-currency"
           select
           label="Select"
-          value={group}
-          onChange={e => setGroup(e.target.value)}
-          helperText="Please select your group"
+          value={subject}
+          onChange={e => setSubject(e.target.value)}
+          helperText="Please select your subject"
         >
             {
-                studentGroups.map(i => (   <MenuItem key={i} value={i}>
+                teacherGroups.map(i => (   <MenuItem key={i} value={i}>
                 {i}
               </MenuItem>))
             }         
         </TextField>
 
-            <Button  variant="contained" onClick={() => addStudent(name, surname, group)}>Add student</Button>
+            <Button variant="contained" onClick={() => addTeacher(name, surname, subject)}>Add teacher</Button>
 
         </Grid>
       </Box>
