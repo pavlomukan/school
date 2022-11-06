@@ -14,6 +14,7 @@ export default function AddStudent({addStudent}) {
         component="form"
         noValidate
         autoComplete="off"
+      
       >
         <Grid
             container
@@ -43,7 +44,7 @@ export default function AddStudent({addStudent}) {
             }         
         </TextField>
 
-            <Button variant="contained" onClick={() => addStudent(name, surname, group)}>Add student</Button>
+            <Button  variant="contained" onClick={() => addStudent(name, surname, group)}>Add student</Button>
 
         </Grid>
       </Box>
