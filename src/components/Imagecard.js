@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 export default function ImageCard() {
   return (
-    <Card sx={{ maxWidth: 356 }}>
+    <Card sx={{ width: '100%' }}>
       <CardMedia
         component="img"
         height="180"

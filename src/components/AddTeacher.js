@@ -1,13 +1,18 @@
 import React from 'react';
-import {TextField, Box, Grid, MenuItem, Button } from '@mui/material';
+import {TextField, Box, Grid, MenuItem, Button } from '@mui/material' ;
+import axios from 'axios';
 
-export default function AddTeacher({addTeacher}) {
+export default function AddTeacher() {
 
     const teacherGroups = ['English', 'Math', 'Sciense', 'Geography', 'Art', 'PE', 'Biology'];
 
     const [name, setName] = React.useState('');
     const [surname, setSurname] = React.useState('');
     const [subject, setSubject] = React.useState('');
+
+    const addTeacher = () => {
+      axios.post('http://localhost:4000/teacher',{name, surname, subject});
+    }
 
     return (
     <Box
@@ -23,10 +28,10 @@ export default function AddTeacher({addTeacher}) {
             >
         <TextField
             id="outlined-basic"
-        
-            label=" Teacher Name" 
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
+
+            label=" Teacher Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             variant="outlined" />
         <TextField id="outlined-basic" label="Surname" value={surname} onChange={(e) => setSurname(e.target.value)} variant="outlined" />
         <TextField
@@ -41,10 +46,10 @@ export default function AddTeacher({addTeacher}) {
                 teacherGroups.map(i => (   <MenuItem key={i} value={i}>
                 {i}
               </MenuItem>))
-            }         
+            }
         </TextField>
 
-            <Button variant="contained" onClick={() => addTeacher(name, surname, subject)}>Add teacher</Button>
+            <Button variant="contained" onClick={addTeacher}>Add teacher</Button>
 
         </Grid>
       </Box>
